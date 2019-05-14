@@ -43,6 +43,10 @@
     if (self) {
         _synthesizer = [[AVSpeechSynthesizer alloc] init];
 
+        NSArray *ary = [AVSpeechSynthesisVoice speechVoices];
+        for (AVSpeechSynthesisVoice *tmp in ary) {
+            NSLog(@"language:%@, name:%@, identifier:%@", tmp.language, tmp.name, tmp.identifier);
+        }
         _voices = @[[AVSpeechSynthesisVoice voiceWithLanguage:@"en-US"],
                     [AVSpeechSynthesisVoice voiceWithLanguage:@"en-GB"]];
 
@@ -59,7 +63,8 @@
              @"What's your favorite feature?",
              @"Oh, they're all my babies.  I couldn't possibly choose.",
              @"It was great to speak with you!",
-             @"The pleasure was all mine!  Have fun!"];
+             @"The pleasure was all mine!  Have fun!",
+             @"你好啊"];
 }
 
 - (void)beginConversation {
