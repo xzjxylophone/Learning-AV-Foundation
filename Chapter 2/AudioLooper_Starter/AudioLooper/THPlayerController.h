@@ -33,6 +33,9 @@
 @property (nonatomic, getter = isPlaying) BOOL playing;
 @property (weak, nonatomic) id <THPlayerControllerDelegate> delegate;
 
+
+
+#pragma mark - Public Method
 // Global methods
 - (void)play;
 - (void)stop;
